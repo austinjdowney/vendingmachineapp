@@ -22,14 +22,21 @@
     </header>
     <main>
         <div class='row'>
-            <div class="col-6" id="snacks"></div>
-            <div class="col-6 text-center">
-                <button class="btn btn-danger" onclick="app.VmController.snack()">Doritos</button>
-                <button class="btn btn-info" onclick="app.VmController.snack(5)">Fig Newtons</button>
-                <button class="btn btn-warning" onclick="app.VmController.attack(10)">Snickers</button>
+            <div class="col-6 text-center" id='snacks'>
+                <button class="btn btn-danger shadow" id='A1' onclick="app.VmController.snack(1, 'Doritos')"><img
+                        src="./assets/img/doritos.jpg">Doritos</button>
+                <button class="btn btn-info shadow" id='A2' onclick="app.VmController.snack(2, 'Fig Newtons')"><img
+                        src="./assets/img/Fig Newton.jpg">Fig Newtons</button>
+                <button class="btn btn-warning shadow" id='A3' onclick="app.VmController.snack(4, 'King Snickers')"><img
+                        src="./assets/img/Snickers.jpg">Snickers</button>
             </div>
+            <div class="col-6">
+                <button class="btn btn-success btn-lg shadow"> Insert Money
+                </button>
+                <img class='w-75' src="./assets/img/Vending Machine.png" alt="">
+            </div>
+
         </div>
-            <div class="col-6"></div>
         </div>
     </main>
     <footer class="container-fluid bg-dark text-light">

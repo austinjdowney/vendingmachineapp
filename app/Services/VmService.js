@@ -1,11 +1,14 @@
-import {ProxyState} from "../AppState.js"
+import { ProxyState } from "../AppState.js"
 
-class Snacks{
-    snack(price){
-        ProxyState.snacks -= price
-        if (ProxyState.snacks.price < 0){
+class Snacks {
+    snack(price, name) {
+        ProxyState.currentTransactions += .50
+        ProxyState.currentTransactions -= price
+        if (ProxyState.snacks.price < 0) {
             alert('NEED MORE MONEY')
-        }else 
-        return lastVended
+        } else
+            ProxyState.lastVended = name
+        return alert(name)
     }
 }
+

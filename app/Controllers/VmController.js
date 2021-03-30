@@ -6,24 +6,22 @@ function _draw() {
   let snacks = ProxyState.snacks;
   let template = ''
   values.forEach(v => template += v.Template)
-  document.getElementById("snacks").innerHTML = /*html*/`
-  <button className="btn btn-info" onclick="app.valuesController.addValue()">Add Value</button>  
-  <div className="card-columns values">
-      ${template}
-  </div>
+  document.getElementById('snacks').innerHTML = `
+ <button class="btn btn-danger" id='${snack.id}' onclick="app.VmController.snack(${snacks.price}, '${snacks.name}')">${snacks.name}</button>
   `
 }
 
+
+
 //Public
-export default class ValuesController {
+export default class VmController {
   constructor() {
-    ProxyState.on("values", _draw);
+    ProxyState.on('snacks', _draw);
     _draw()
   }
 
-  addValue() {
-    valuesService.addValue()
+  snack(type, name) {
+    vendingMachingeService.snack(type, name)
   }
 
 }
-)

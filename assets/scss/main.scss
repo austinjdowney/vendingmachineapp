@@ -15,5 +15,13 @@ main {
   flex-grow: 1;
 }
 
+#VM{
+  position: relative;
+}
 
+#Cash{
+  position: absolute;
+  bottom: 3rem;
+  left: 10rem;
+}
 
