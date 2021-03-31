@@ -15,20 +15,13 @@ function _drawSnacks() {
   `
 }
 
-function _drawCash() {
-  let currentTransaction = 0
-  let currentTransactionElem = document.getElementById('cash')
-  currentTransactionElem.innerText = `${currentTransaction}`
-}
-
 
 
 //Public
 export default class VmController {
   constructor() {
     ProxyState.on('cash', 'A1', 'A2', 'A3', _drawSnacks, _drawCash);
-    _drawSnacks()
-    _drawCash()
+    _draw()
   }
 
   snack(price, name) {
@@ -36,6 +29,6 @@ export default class VmController {
   }
 
   cash(money) {
-    vmService.cash(money)
+    vmService.cash(price)
   }
 }

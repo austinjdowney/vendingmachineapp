@@ -8,7 +8,7 @@ class VmService {
             ProxyState.lastVended = name
         return alert(name)
     }
-    cash(currentTransaction) {
+    cash(price) {
 
         if (currentTransaction >= 0) {
             ProxyState.currentTransaction += .50
