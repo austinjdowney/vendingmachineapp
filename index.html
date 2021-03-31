@@ -22,8 +22,8 @@
     </header>
     <main>
         <div class='row'>
-            <div class="col-6 text-center" id='snacks'>
-                <button class="btn btn-danger shadow" id='A1' onclick="app.VmController.snack(1, 'Doritos')"><img
+            <div class="col-6 text-center">
+                <button class="btn btn-danger shadow" id='A1' onclick="app.VmController.snack(1, 'Snickers')"><img
                         src="./assets/img/doritos.jpg">Doritos</button>
                 <button class="btn btn-info shadow" id='A2' onclick="app.VmController.snack(2, 'Fig Newtons')"><img
                         src="./assets/img/Fig Newton.jpg">Fig Newtons</button>
@@ -31,7 +31,8 @@
                         src="./assets/img/Snickers.jpg">Snickers</button>
             </div>
             <div class="col-6">
-                <button class="btn btn-success btn-lg shadow"> Insert Money
+                <button class="btn btn-success btn-lg shadow" id='cash' onclick="app.VmController.cash(0)"> Insert
+                    Money
                 </button>
                 <img class='w-75' src="./assets/img/Vending Machine.png" alt="">
             </div>

@@ -1,14 +1,24 @@
 import { ProxyState } from "../AppState.js";
-import { VmService } from "../Services/ValuesService.js";
+import { vmService } from "../Services/VmService.js";
 
 //Private
-function _draw() {
+function _drawSnacks() {
   let snacks = ProxyState.snacks;
-  let template = ''
-  values.forEach(v => template += v.Template)
-  document.getElementById('snacks').innerHTML = `
- <button class="btn btn-danger" id='${snack.id}' onclick="app.VmController.snack(${snacks.price}, '${snacks.name}')">${snacks.name}</button>
+  document.getElementById('A1').innerHTML = `
+ <button class="btn btn-danger" id='A1' onclick="app.VmController.snack(${snacks.price}, '${snacks.name}')">Doritos</button>
   `
+  document.getElementById('A2').innerHTML = `
+ <button class="btn btn-danger" id='A2' onclick="app.VmController.snack(${snacks.price}, '${snacks.name}')">Fig Newtons</button>
+  `
+  document.getElementById('A3').innerHTML = `
+ <button class="btn btn-danger" id='A3' onclick="app.VmController.snack(${snacks.price}, '${snacks.name}')">King Snickers</button>
+  `
+}
+
+function _drawCash() {
+  let currentTransaction = 0
+  let currentTransactionElem = document.getElementById('cash')
+  currentTransactionElem.innerText = `${currentTransaction}`
 }
 
 
@@ -16,12 +26,16 @@ function _draw() {
 //Public
 export default class VmController {
   constructor() {
-    ProxyState.on('snacks', _draw);
-    _draw()
+    ProxyState.on('cash', 'A1', 'A2', 'A3', _drawSnacks, _drawCash);
+    _drawSnacks()
+    _drawCash()
   }
 
-  snack(type, name) {
-    vendingMachingeService.snack(type, name)
+  snack(price, name) {
+    vmService.snack(price, name)
   }
 
+  cash(money) {
+    vmService.cash(money)
+  }
 }

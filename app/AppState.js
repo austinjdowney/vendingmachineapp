@@ -9,9 +9,9 @@ class AppState extends EventEmitter {
 
   state = {
     currentTransaction: 0,
-    snacks: [new Snacks('A1', 'Doritos', 1.00, 'img'),
-    new Snacks('A2', 'Fig Newtons', 2.00, 'img'),
-    new Snacks('A3', 'King Snickers', 4.00, 'img')],
+    snacks: [new Snacks('A1', 'Doritos', 1.00),
+    new Snacks('A2', 'Fig Newtons', 2.00),
+    new Snacks('A3', 'King Snickers', 4.00)],
     lastVended: null
   }
 }
